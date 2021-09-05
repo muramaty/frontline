@@ -1,0 +1,12 @@
+@import "tachyons";
+
+body {
+  font-family: Inter var,-apple-system, "BlinkMacSystemFont", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif, "Segoe UI Emoji";
+  color: #3d5980;
+  /* background-color: rgb(227, 228, 230);*/
+  background-color: #f7f9f8;
+}
+section {
+  color: #2a6dbf;
+  background-color: #e2e3e5;
+}
