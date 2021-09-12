@@ -5,27 +5,36 @@
      <title>フロントエンド</title>
      <meta name="description" content="ディスクリプションを入力">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/ -->
      <script src="/js/home.js"></script>
      </head>
      <body class="w-100">
      <!----- header----->
-     <div class="ph3 pv2">
-     <header><a href="/" class="f3 b red">FrontLine</a></header>
-     </div>
      <!----- /header ----->
      
      <!----- main ----->
+     <!-- main class="ph3-ns bt b--black-10" -->
      <main class="ph3-ns bt b--black-10">
-     <nav class="pa2 mt3">
+     <nav class="dt w-100 pa2 mt3">
+
+       <!--
+       <a class="dtc v-mid mid-gray link dim w-35" href="#" title="Home">
+        <img src="/xrea_ad_468x60.png" class="dib ">
+       </a>
+       -->
+       <div class="fl w-50 v-btm">
+       <header><a href="/" class="f3 b red">FrontLine</a></header>
+         <div class="mt3">
        &gt;&gt;
-       <a href="/env/">ホスティング</a> /
-       <a href="/site/">サイト構成</a> /
-       <a href="/html/">HTML</a> /
-       <a href="/css/">CSS</a> /
-       <a href="/build/">ビルド環境</a> /
-       <a href="/"></a>
+       <a class="mr3-ns" href="/host/">ホスティング</a> 
+       <a class="mr3-ns" href="/site/">サイト構成</a> 
+       <a class="mr3-ns" href="/html/">HTML</a> 
+       <a class="mr3-ns" href="/css/">CSS</a> 
+       <a class="mr3-ns" href="/build/">ビルド環境</a> 
+       <a class="mr3-ns" href="/"></a>
+         </div>
+       </div>
      </nav>
+
      <section class="pa2">
      <h2>見出し２</h2>
      <p>コンテンツの内容</p>
@@ -42,9 +51,17 @@
      <!----- /main ----->
      </main>
      
-     <!----- footer ----->
-     <footer>フッター</footer>
-     <!----- /footer ----->
+     <footer class="pv4 ph3 ph5-m ph6-l mid-gray bt b--black-40 mt3">
+       <span>CC0 1.0 Universal</span>
+       <div class="tc mt3">
+       <!--
+       <a href="/language/" title="Language" class="f6 dib ph2 link mid-gray dim">Language</a>
+       <a href="/terms/"    title="Terms" class="f6 dib ph2 link mid-gray dim">Terms of Use</a>
+       <a href="/privacy/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Privacy</a>
+       -->
+         <a class="link near-black hover-silver dib h2 w2 mr3" href="https://github.com/muramaty" title="GitHub">GitHub</a>
+       </div>
+     </footer>
      </body>
      <!-- script src="index.js" type="module"></script -->
     </html>

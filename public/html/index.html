@@ -1,0 +1,104 @@
+    <!DOCTYPE html>
+    <html lang="ja">
+     <head>
+     <meta charset="utf-8">
+     <title>フロントエンド</title>
+     <meta name="description" content="ディスクリプションを入力">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/ -->
+     <script src="/assets/home.js"></script>
+     </head>
+     <body class="w-100">
+     <!----- header----->
+     <div class="ph3 pv2">
+     <header><a href="/" class="f3 b red">FrontLine</a></header>
+     </div>
+     <!----- /header ----->
+     
+     <!----- main ----->
+     <main class="ph3-ns bt b--black-10">
+     <nav class="pa2 mt3">
+       &gt;&gt;
+       <a href="/host/">ホスティング</a> /
+       <a href="/site/">サイト構成</a> /
+       <a href="/html/">HTML</a> /
+       <a href="/css/">CSS</a> /
+       <a href="/build/">ビルド環境</a> /
+       <a href="/js/">JavaScript</a>
+       <a href="/"></a>
+     </nav>
+     <section class="pa2 w-100">
+       <div class="fl w-50">
+       <h2>HTMLテンプレート</h2>
+       <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;タイトル&lt;/title&gt;
+  &lt;meta name="description" content="ディスクリプション"&gt;
+  &lt;meta name="keywords" content="キーワード" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;!-- script src="app.js"&gt;&lt;/script --&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id="header"&gt;
+    サイト名
+    &lt;nav&gt;内部リンク&lt;/nav&gt;
+  &lt;/div&gt;
+  &lt;main&gt;
+    &lt;h1&gt;見出し１&lt;/h1&gt;
+    &lt;time datetime=”2021-09-03” itemprop=”modified”&gt;2021年9月3日&lt;/time&gt;
+    &lt;p&gt;ページの説明&lt;/p&gt;
+    &lt;section&gt;
+      &lt;h2&gt;見出し２&lt;/h2&gt;
+      &lt;p&gt;見出し２の説明&lt;/p&gt;
+      &lt;div&gt;
+        見出し２の内容
+      &lt;/div&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;div id="footer"&gt;
+    フッター
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+     </div>
+     <div class="fl w-50 pl3">
+       <h2>タグの構成、アウトライン</h2>
+       <div>
+       コンテンツの内容、CSS、広告表示、レスポンシブ対応などによりますが、<br>
+       HTMLの構成を決めるときに以下の点を考慮しています。
+       <ul>
+         <li>header、footerタグは文章構成での意味を持つタグなので使用しない(使いどころがわからない)。レイアウトの上部、下部に位置するヘッダー部分、フッター部分はdiv を利用</li>
+         <li>メインコンテンツ部分はmainタグに記述</li>
+         <li>1つの内容をsectionタグ、h2タグに対応させ、必要に応じて複数記述</li>
+         <li>h1タグの近くにtime タグをつけて更新日を記述</li>
+       </ul>
+       参考<br>
+       <a href="https://gsnedders.html5.org/outliner/">アウトラインの確認</a><br>
+       <a href="https://html.spec.whatwg.org/multipage/">HTMLの仕様</a> (日本語訳のリンクあり)
+       <p>
+       TODO<br>
+       ２カラムのサイドバー、レスポンシブ、SEO向けのタグについて
+       </p>
+       <div>
+     </div>
+     </section>
+
+     <!----- /main ----->
+     
+     <footer class="pv4 ph3 ph5-m ph6-l mid-gray bt b--black-40 mt3 fl w-100">
+       <span>CC0 1.0 Universal</span>
+       <div class="tc mt3">
+       <!--
+       <a href="/language/" title="Language" class="f6 dib ph2 link mid-gray dim">Language</a>
+       <a href="/terms/"    title="Terms" class="f6 dib ph2 link mid-gray dim">Terms of Use</a>
+       <a href="/privacy/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Privacy</a>
+       -->
+         <a class="link near-black hover-silver dib h2 w2 mr3" href="https://github.com/muramaty" title="GitHub">GitHub</a>
+       </div>
+     </footer>
+     </main>
+     </body>
+     <!-- script src="index.js" type="module"></script -->
+    </html>
