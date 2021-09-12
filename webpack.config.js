@@ -39,7 +39,7 @@ module.exports = {
 
     //  出力先のパス
     // path: path.join(__dirname, 'dist')
-    path: path.join(__dirname, 'public/js')
+    path: path.join(__dirname, 'public/assets')
   },
 
   plugins: [
