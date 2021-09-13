@@ -41,18 +41,17 @@ module.exports = {
     // path: path.join(__dirname, 'dist')
     path: path.join(__dirname, 'public/assets')
   },
+  devtool: "hidden-source-map",
 
   plugins: [
     // new HtmlWebpackPlugin({
     //   scriptLoading: 'defer',
     // }),
-    /*
     new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     })
-*/
   ],
 
 };

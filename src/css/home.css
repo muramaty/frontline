@@ -12,6 +12,9 @@ body {
   line-height:1.5;
   color:#212529;
 }
+h1, h2 {
+  margin-bottom: 0.5rem;
+}
 section {
   color: #2a6dbf;
   background-color: #e2e3e5;
@@ -26,3 +29,13 @@ ul {
   margin-bottom: 0.6rem;
   padding-left: 1.6rem;
 }
+table {
+  border-collapse: collapse;
+}
+td {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
