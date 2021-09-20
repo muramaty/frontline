@@ -44,6 +44,10 @@
        <p>
        リンク: <a href="https://yarnpkg.com/cli/">yarn cli</a>
        </p>
+       <div>
+         gitリポジトリから直接add する<br>
+         yarn add &lt;package name&gt;@git+ssh://&lt;git remote URL&gt;
+       <div>
      </section>
      <section class="pa2 fl w-50">
          <h2>インストールするパッケージ</h2>
@@ -61,6 +65,8 @@
          </dl>
          tachyons というCSSを利用するので今回はSass を利用しない<br>
          CSSをjs に含めない場合はMiniCssExtractPlugin もインストール(今回は使わない)。<br>
+         eslint は利用しない<br>
+         vim,VSCode がlint機能を持っている。コミット前にlint処理が走る。というわけでビルド時にeslint を実行しないようにしています(ビルド時間短縮のため)。<br>
 
        <pre>
        - webpack.config.js

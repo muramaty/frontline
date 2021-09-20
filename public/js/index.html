@@ -1,0 +1,350 @@
+    <!DOCTYPE html>
+    <html lang="ja">
+     <head>
+     <meta charset="utf-8">
+     <title>フロントエンド</title>
+     <meta name="description" content="ディスクリプションを入力">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="/assets/home.js"></script>
+     </head>
+<body class="w-100">
+  <!----- header----->
+  <!----- /header ----->
+     
+  <!----- main ----->
+  <!-- main class="ph3-ns bt b--black-10" -->
+  <main class="ph3-ns bt b--black-10">
+  <nav class="dt w-100 pa2 mt3">
+
+       <!--
+       <a class="dtc v-mid mid-gray link dim w-35" href="#" title="Home">
+        <img src="/xrea_ad_468x60.png" class="dib ">
+       </a>
+       -->
+  <div class="fl w-50 v-btm">
+    <header><a href="/" class="f3 b red">FrontLine</a></header>
+    <div class="mt3">
+       &gt;&gt;
+       <a class="mr3-ns" href="/host/">ホスティング</a> 
+       <a class="mr3-ns" href="/site/">サイト構成</a> 
+       <a class="mr3-ns" href="/html/">HTML</a> 
+       <a class="mr3-ns" href="/css/">CSS</a> 
+       <a class="mr3-ns" href="/build/">ビルド環境</a> 
+       <a class="mr3-ns" href="/js/">JavaScript</a>
+       <a class="mr3-ns" href="/jq/">jQuery</a>
+       <a class="mr3-ns" href="/"></a>
+    </div>
+  </div>
+  </nav>
+
+  <section class="pa2">
+  <h2>JavaScript</h2>
+    <pre>
+  - ES6+
+  - lodash 
+  - Date, Time (date-fns)
+  - regular expressions
+    </pre>
+  </section>
+
+  <section class="pa2">
+    <h3>ES6+</h3>
+    <div>
+       x 変数宣言 var -&gt; let(再宣言不可)、const(再代入不可)<br>
+       - {}によるブロックスコープ<br>
+       - 無名関数の省略形 function(arg){} -$gt; (arg)=$gt;{}<br>
+       - const宣言されたオブジェクト内の無名関数でもthisのコンテキストはオブジェクトを参照<br>
+       x Classを使ってクラス定義が可能、extend で継承が可能<br>
+       - function でデフォルト引数が利用可能<br>
+       - オブジェクトの要素を選択して代入可能<br>
+       x スプレッド構文で配列の展開が容易化<br>
+       x 文字列内の変数展開<br>
+       x 配列用のループ処理「for of」<br>
+       - イテレータ/ジェネレータ<br>
+       - Promise で非同期処理の簡潔化<br>
+    </div>
+
+    <div>
+      <h4>変数宣言 let、const</h4>
+       let 変数のスコープは｛｝内に限定されます。
+      (es5以前のvar 変数は{}の外から参照、変更できたため即時実行関数を利用するテクニックが必要でした)
+      <pre class="mt2 pv2"><code>function let_var(){
+  let v1 = 1;
+  if (true){
+    let v1 = 3;
+    let v2 = 5;
+    console.log(v1) // &gt; 3
+}
+console.log(v1); // &gt; 1
+console.log(v2); // &gt; error: v2 is not defined
+
+const v3 = 1;
+v3 = 2; // &gt; error: invalid assignment to const 'v3'
+const v3 = 3; // &gt; error: redeclaration of const v3
+      </code> </pre>
+    <div>
+    <div>
+      <h4 class="mb1">テンプレート文字列</h4>
+      バッククオートで定義された文字列の${}に文字を埋め込む
+      <pre>
+        <code>let str2 = 'mojimoji';
+console.log(`string :${str2}`); // &lt; string :mojimoji
+        </code>
+      </pre>
+    </div>
+    <div>
+      <h4>クラスと継承</h4>
+      <pre><code>class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  getName() {
+    return this.name;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name) {
+    super(name);
+    this.speed = 10;
+  }
+  run() {
+    console.log('run at', this.spped);
+  }
+}
+      </code></pre>
+    </div>
+    <div>
+      <h4>{}のスコープ</h4>
+      <pre><code>
+      </code></pre>
+    </div>
+    <div>
+      <h4>スプレッド構文</h4>
+      複数の変数を配列へ
+      <pre><code>function func(...arg) {
+  console.log(arg);
+}
+func(1, 2, 3); // &gt; [1, 2, 3]</code></pre>
+      配列を展開
+      <pre><code>let array = [3, 4, 5];
+console.log(...array);           // &gt; 3, 4, 5
+console.log(Math.max(array));    // &gt; NaN
+console.log(Math.max(...array)); // &gt; 5</code></pre>
+    </div>
+    <div class="w-100">
+    <h4>ループ</h4>
+    <div class="fl w-50">
+      Objectのループ
+      <pre><code>let len = {height:80, width:50};
+for (let key in len) {
+  console.log(key, len[key]);
+}
+      </code></pre>
+    </div>
+    <div class="fl w-50">
+      Arrayのループ
+      <pre><code>let ary = [3, 4, 5];
+for(let val of ary) {
+  console.log(val);
+}
+      </code></pre>
+    </div>
+    </div>
+    <hr>
+
+    <div class="w-100">
+    <h4>関数内のthis</h4>
+    <div class="fl w-50 pa1">
+      アロー関数 (関数の定義時点でthisが固定される)
+      <pre><code>let checkthis = {
+  val01: '変数１',
+  val02: '変数２',
+  printVal1: function(){
+    setTimeout(() =&gt; {
+      console.log('val01:' + this.val01);
+    },1000);
+  },
+  printVal2: function(){
+    console.log("val02:" + this.val02);
+  }
+}
+checkthis.printVal1();
+checkthis.printVal2();
+      </code></pre>
+    </div>
+    <div class="fl w-50 pa1">
+      function
+      <pre><code>let checkthis = {
+  val01: '変数１',
+  val02: '変数２',
+  printVal1: function(){
+    setTimeout(function(){
+      console.log('val01:' + this.val01);  // &gt; val01:undefined
+    },1000);
+  },
+  printVal2: function(){
+    console.log("val02:" + this.val02);  // &gt; val02:変数２
+  }
+}
+checkthis.printVal1();
+checkthis.printVal2();
+      </code></pre>
+    </div>
+    <div class="fl w-50">
+      function + bind
+      <pre><code>let checkthis = {
+  val01: '変数１',
+  val02: '変数２',
+  printVal1: function(){
+    setTimeout(function(){
+      console.log('val01:' + this.val01);  // &gt; val01:変数１
+    }.bind(this),1000);
+  },
+  printVal2: function(){
+    console.log("val02:" + this.val02);  // &gt; val02:変数２
+  }
+}
+checkthis.printVal1();
+checkthis.printVal2();
+      </code></pre>
+    </div>
+    <div class="fl w-50">
+      selft に退避
+      <pre><code>let checkthis = {
+  val01: '変数１',
+  val02: '変数２',
+  printVal1: function(){
+    var self = this;
+    setTimeout(function(){
+      console.log('val01:' + self.val01);  // &gt; val01:変数１
+    }.bind(this),1000);
+  },
+  printVal2: function(){
+    console.log("val02:" + this.val02);  // &gt; val02:変数２
+  }
+}
+checkthis.printVal1();
+checkthis.printVal2();
+      </code></pre>
+    </div>
+    </div><!-- // 関数内のthis -->
+
+<!--
+    <div class="w-100">
+    <div class="fl w-50">
+      <h4></h4>
+      <pre><code>
+      </code></pre>
+    </div>
+    </div>
+-->
+  </section>
+
+  <section class="pa2 w-100">
+    <div class="w-100">
+     <h3>lodashはどうでしょう...</h3>
+     有名な便利ライブラリ<br>
+     <a href="https://github.com/lodash/lodash">Lodash</a> /
+     <a href="https://github.com/ramda/ramda">Ramda</a> /
+     <a href="https://github.com/immutable-js/immutable-js/">Immutable</a> /
+     <a href="https://github.com/angus-c/just/">Just</a><br>
+    </div>
+    一部の関数しか使わないのにloadash を読み込むのは無駄ではないかという意見もあります。しかし、これらのライブラリはとても便利なので可能ならば利用するべきだと思います。よくRamda を利用しています。<br>
+    <br>
+    必要なものだけ読み込むために<br>
+    webpack はtree shaking を実装しているので必要な関数だけを読み込むことができます。<br>
+    - es-module (import/export) で書かれている場合のみ有効<br>
+    - production-mode で有効 (development-mode はデフォルトで全てのコードを読み込むようです)<br>
+    必読：<a href="https://webpack.js.org/guides/tree-shaking/">Tree Shaking(webpack guides)</a><br>
+    普段、Ramda を利用するときにはimport で必要な関数のみを読み込んで利用しています。<br>
+    <br>
+    lodash は...<br>
+    実は何年もlodash を使ってないのでRamdaと同じように必要なものだけimport できるのか確認してていません。<br>
+    しかし、lodash は関数毎にnpm パッケージとして登録されているので個別にインストールできます。<br>
+    <a href="https://www.npmjs.com/search?q=keywords:lodash-modularized">lodash 関数毎のnpmモジュール</a><br>
+    <br>
+    コードレベルで便利関数を用意したい！<br>
+    そういった方はJust ライブラリのソースコードを検討してみてください。各機能が依存しないように書かれています。<br>
+    参考<br>
+    - <a href="https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore">You don't (may not) need Lodash/Underscore</a><br>
+    - MDN Web docs:
+    <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> /
+    <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> /
+    <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>
+ 
+  </section>
+
+  <section class="pa2">
+     <h3>jQuery</h3>
+  </section>
+
+  <section class="pa2">
+     <h3>日時 (date-fns)</h3>
+  </section>
+
+  <section class="pa2">
+    <h3>regular expressions</h3>
+    <a href="https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions">正規表現@MDN</a><br>
+    RegExp のメソッド test()、 exec()<br>
+    String のメソッド match()、replace()、search()、split()<br>
+    <br>
+    <div>
+      sフラグ: 任意の文字'.'に改行も一致するようになります
+      <pre><code>/line one.line two/s.test('line one\nline two'); // true</code></pre>
+    </div>
+    <div>
+      名前付きキャプチャ
+      <pre><code>let reDate = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/u;
+let res = reDate.exec('2021-09-02');
+res &gt; Array(4) [ "2021-09-02", "2021", "09", "02" ]
+// マッチしたyearにアクセス
+res.groups.year // &gt; 2021
+// array としてもアクセスできる
+res[1] // &gt; 2021</code></pre>
+    </div>
+    <div>
+      先読み、後読みアサーション
+      <pre><code>let val = 'No32 JackFrost';
+// 先読みアサーション(lookahead assertion)
+let res = /Jack(?=Sprat|Frost)/.exec(val);
+console.log(res); // &gt; Array ["No32 Jack"]
+
+// 後読みアサーション(positive lookbehind assertion)
+let val = 'No33 TomSprat age:32';
+let res = /(?&lt;=Jack|Tom)Sprat/.exec(val);
+console.log(res); // &gt; Array ["Sprat"]
+
+// 否定先読みアサーション(negative lookahead assertion)
+/\d+(?!\.)/.exec("3.141")
+console.log(res); // &gt; Array ["141"]
+
+// 否定後読みアサーション(negative lookbehind assertion) 
+let rgx = /(?&lt;![-\d])\d+/g;
+let str = "0 12 -5 123 -18";
+console.log(str.match(rgx)); // &gt; Array ["0", "12", "123"]
+      </code></pre>
+    </div>
+    <div>
+      TODO: unicode property
+      <pre><code>
+      </code></pre>
+    </div>
+  </section>
+
+  </main><!----- /main ----->
+     
+  <footer class="pv4 ph3 ph5-m ph6-l mid-gray bt b--black-40 mt3">
+    <span>CC0 1.0 Universal</span>
+    <div class="tc mt3">
+       <!--
+       <a href="/language/" title="Language" class="f6 dib ph2 link mid-gray dim">Language</a>
+       <a href="/terms/"    title="Terms" class="f6 dib ph2 link mid-gray dim">Terms of Use</a>
+       <a href="/privacy/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Privacy</a>
+       -->
+         <a class="link near-black hover-silver dib h2 w2 mr3" href="https://github.com/muramaty" title="GitHub">GitHub</a>
+    </div>
+  </footer>
+</body>
+<!-- script src="index.js" type="module"></script -->
+</html>

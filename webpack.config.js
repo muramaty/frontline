@@ -10,7 +10,7 @@ module.exports = {
       {
         test:/\.css$/,
         use:['style-loader',
-             'css-loader'
+             'css-loader',
                 /*
              {  loader: 'css-loader',
                 options: {//modules: true,
@@ -22,14 +22,21 @@ module.exports = {
              },
              'postcss-loader' */
         ]
-      }
+      },
+      {
+        test:/\.scss$/,
+        use:['style-loader',
+             'css-loader',
+             'sass-loader'  // jquey のプラグイン紹介で必要
+        ]
+      },
     ]
   },
 
   // エントリーポイントの設定
   entry: {
     home: `./src/home.js`,
-    //jq: `./src/jq.js`,
+    jq: `./src/jq.js`,
   },
 
   // ファイルの出力設定
@@ -41,7 +48,7 @@ module.exports = {
     // path: path.join(__dirname, 'dist')
     path: path.join(__dirname, 'public/assets')
   },
-  devtool: "hidden-source-map",
+  // devtool: "hidden-source-map",
 
   plugins: [
     // new HtmlWebpackPlugin({
@@ -51,6 +58,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
+      // $: "jquery/dist/jquery.slim",
+      // jQuery: "jquery/dist/jquery.slim"
     })
   ],
 

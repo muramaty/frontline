@@ -10,18 +10,33 @@ body {
 
   font-size: 1rem;
   line-height:1.5;
-  color:#212529;
+  /* color:#212529;*/
 }
-h1, h2 {
-  margin-bottom: 0.5rem;
+h1 {
+  border-bottom: 1px solid #af3c43;
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.2rem;
+  font-weight: 600;
+}
+h2 {
+  margin-bottom: 0.2rem;
+  padding-bottom: 0.2rem;
+  font-weight: 500;
 }
 section {
-  color: #2a6dbf;
+  /* color: #2a6dbf; */
+  color: #162a3a;
   background-color: #e2e3e5;
 }
+pre {
+  margin: 0.2rem 0.5rem;
+}
 code {
-  background-color: #555; border-radius: 2px;
-border: solid 2px #c2c2c8; padding: 8px; margin: 3px; display: block;
+  background-color: #666; border-radius: 3px;
+  /* border: solid 2px #c2c2c8;*/
+  padding: 4px 6px;
+  /* margin: 3px;*/
+ display: block;
  font-family: monospace; line-height: 1.2em; color: #eee;
 }
 ul {
@@ -37,5 +52,8 @@ td {
   padding-right: 0.5rem;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+}
+div {
+  margin-top: 0.6rem;
 }
 
