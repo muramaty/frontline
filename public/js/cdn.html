@@ -1,0 +1,108 @@
+    <!DOCTYPE html>
+    <html lang="ja">
+     <head>
+     <meta charset="utf-8">
+     <title>フロントエンド</title>
+     <meta name="description" content="ディスクリプションを入力">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="/assets/home.js"></script>
+     </head>
+<body class="w-100">
+  <!----- header----->
+  <!----- /header ----->
+     
+  <!----- main ----->
+  <!-- main class="ph3-ns bt b--black-10" -->
+  <main class="ph3-ns bt b--black-10">
+  <nav class="dt w-100 pa2 mt3">
+
+       <!--
+       <a class="dtc v-mid mid-gray link dim w-35" href="#" title="Home">
+        <img src="/xrea_ad_468x60.png" class="dib ">
+       </a>
+       -->
+  <div class="fl w-50 v-btm">
+    <header><a href="/" class="f3 b red">FrontLine</a></header>
+    <div class="mt3">
+       &gt;&gt;
+       <a class="mr3-ns" href="/host/">ホスティング</a> 
+       <a class="mr3-ns" href="/site/">サイト構成</a> 
+       <a class="mr3-ns" href="/html/">HTML</a> 
+       <a class="mr3-ns" href="/css/">CSS</a> 
+       <a class="mr3-ns" href="/build/">ビルド環境</a> 
+       <a class="mr3-ns" href="/js/">JavaScript</a>
+       <a class="mr3-ns" href="/jq/">jQuery</a>
+       <a class="mr3-ns" href="/"></a>
+    </div>
+  </div>
+  </nav>
+
+  <section class="pa2">
+  <h2>CDN (unpkg.com)</h2>
+    <div>
+      <a href="https://unpkg.com/">unpkg.com</a><br>
+      npmjs.com の全パッケージ(全バージョン？)が利用可能なCDN サービス<br>
+      オリジナルホストはFly.io<br>
+      CDN はCloudflare<br>
+    </div>
+  </section>
+
+  <section class="pa2">
+    <h2>URL ルール</h2>
+    <div>
+      <p>unpkg.com/:package@:version/:file</p>
+      @version を省略もしくは@latest をつけると最新バージョン
+     <div>
+     <span class="b">Vue3</span> <a href="https://unpkg.com/browse/vue@next/">https://unpkg.com/browse/vue@next/</a><br>
+     @next をつけないとバージョン２<br>
+     例<br>
+     - https://unpkg.com/browse/vue@3.2.19/dist/vue.global.js<br>
+     - https://unpkg.com/browse/vue@3.2.19/dist/vue.global.prod.js<br>
+     </div>
+     <div>
+     <span class="b">react</span> <a href="https://unpkg.com/browse/react/">https://unpkg.com/browse/react/</a><br>
+     例<br>
+     - https://unpkg.com/react@16.7.0/umd/react.production.min.js<br>
+     - https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js<br>
+     </div>
+     <div>
+     <span class="b">jQuery</span> <a href="https://unpkg.com/browse/jquery/">https://unpkg.com/browse/jquery/</a><br>
+     例<br>
+     - https://unpkg.com/jquery@3.6.0/dist/jquery.min.js<br>
+     - https://unpkg.com/jquery@3.6.0/dist/jquery.slim.min.js<br>
+     </div>
+     <div>
+     その他<br>
+     <a href="https://unpkg.com/browse/lodash/">lodash</a> /
+     <a href="https://unpkg.com/browse/ramda/">ramda</a> /
+     <a href="https://unpkg.com/browse/date-fns/">date-fns</a> /
+     <a href="https://unpkg.com/browse/handlebars/">handlebars</a>
+     </div>
+    </div>
+<!--
+    <div class="w-100">
+    <div class="fl w-50">
+      <h4></h4>
+      <pre><code>
+      </code></pre>
+    </div>
+    </div>
+-->
+  </section>
+
+  </main><!----- /main ----->
+     
+  <footer class="pv4 ph3 ph5-m ph6-l mid-gray bt b--black-40 mt3">
+    <span>CC0 1.0 Universal</span>
+    <div class="tc mt3">
+       <!--
+       <a href="/language/" title="Language" class="f6 dib ph2 link mid-gray dim">Language</a>
+       <a href="/terms/"    title="Terms" class="f6 dib ph2 link mid-gray dim">Terms of Use</a>
+       <a href="/privacy/"  title="Privacy" class="f6 dib ph2 link mid-gray dim">Privacy</a>
+       -->
+         <a class="link near-black hover-silver dib h2 w2 mr3" href="https://github.com/muramaty" title="GitHub">GitHub</a>
+    </div>
+  </footer>
+</body>
+<!-- script src="index.js" type="module"></script -->
+</html>
