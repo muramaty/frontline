@@ -1,0 +1,64 @@
+
+2022/01/06 スタート
+
+brew インストール (asdf, ruby-build, neovim, direnv)
+chrome (ublock)
+ssh-keygen
+asdf (ruby, nodejs, git)
+VSCode (rails, ruby, rspec, typescript, javascript, thander-client, デバッグ環境, vim化)
+
+mac での環境構築
+ - brew のチートシート
+ - zshell
+ - ssh キー作成、config 設定
+ - デーモン化、コマンド
+vscode (rails, ruby, rspec, typescript, javascript, thander-client, デバッグ環境, vim化)
+nvim
+markdown エディタ、ビューワ
+docker コマンド、comporse, 総合テストの実行環境
+env (direnv, asdf:node, ruby, rust)
+git
+ansible で設定できるようにしておく
+postgres, mysql, mariadb, mongo, redis のインストール、ユーザー作成をまとめる。ansible, docker で利用できるスクリプト作成
+仕事で使える名前のメアド作成
+
+インストール
+chrome, vscode, brew
+
+[Homebrew]
+https://brew.sh/index_ja
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+確認
+brew -v 
+
+brew でインストール
+asdf, direnv, neovim, git, nginx
+
+[asdf]
+brew install gpg gawk
+echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
+
+~/.asdfrc に追加
+legacy_version_file = yes
+
+asdf plugin-add nodejs
+asdf plugin add ruby
+
+asdf list-all ruby
+asdf install ruby 3.0.3
+asdf plugin-update ruby
+
+[nginx]
+brew install nginx
+
+# 設定ファイル
+/usr/local/etc/nginx
+
+brew services start nginx
+
+nginx -s stop 	処理中のリクエスト待たずに終了
+nginx -s quit 	処理を待ってから停止
+nignx -s reload 	設定ファイルを再読み込み
+nginx -s reopen 	ログファイルを開き直す
+
